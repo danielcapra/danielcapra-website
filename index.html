@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>danielcapra</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Kumar+One&display=swap');
+
+        a {
+            all: unset;
+        }
+
+        html::before {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            content: "";
+            opacity: 0.08;
+            z-index: 1000;
+            pointer-events: none;
+            background: url(noise.gif);
+        }
+
+        body {
+            background-color: black;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        #ellipse {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            transform: translateX(-50%) translateY(-50%);
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        nav {
+            display: flex;
+            width: 50%;
+            justify-content: space-evenly;
+            gap: 2em;
+        }
+
+        nav a {
+            color: white;
+            cursor: pointer;
+
+            font-family: 'Kumar One';
+            font-size: 20px;
+
+            display: flex;
+        }
+
+        nav a span {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            rotate: 0deg;
+
+            transition-duration: 2s;
+            transition-timing-function: cubic-bezier(0, .99, .02, 1);
+            transition-property: top, left, rotate;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        nav a:hover span:nth-child(1) {
+            top: -6px;
+            left: -3px;
+            rotate: 4deg;
+        }
+
+        nav a:hover span:nth-child(2) {
+            top: 4px;
+            left: 1px;
+            rotate: -6deg;
+        }
+
+        nav a:hover span:nth-child(3) {
+            top: -8px;
+            left: 2px;
+            rotate: 12deg;
+        }
+
+        nav a:hover span:nth-child(4) {
+            top: 7px;
+            left: 2px;
+            rotate: 6deg;
+        }
+
+        nav a:hover span:nth-child(5) {
+            top: -6px;
+            left: 3px;
+            rotate: 4deg;
+        }
+    </style>
+
+    <script>
+
+        function linkMouseEnter() {
+            moveEllipseAtMousePosition();
+            const ellipse = document.getElementById("ellipse");
+            ellipse.style.visibility = "visible";
+        }
+
+        function linkMouseLeave() {
+            const ellipse = document.getElementById("ellipse");
+            ellipse.style.visibility = "hidden";
+            // reset document onmousemove handler
+            document.onmousemove = null;
+        }
+
+        function moveEllipseAtMousePosition() {
+            "use strict";
+
+            document.onmousemove = handleMouseMove;
+            function handleMouseMove(event) {
+                var ellipse, eventDoc, doc, body, pageX, pageY;
+
+                event = event || window.event; // IE-ism
+
+                // If pageX/Y aren't available and clientX/Y
+                // are, calculate pageX/Y - logic taken from jQuery
+                // Calculate pageX/Y if missing and clientX/Y available
+                if (event.pageX == null && event.clientX != null) {
+                    eventDoc = (event.target && event.target.ownerDocument) || document;
+                    doc = eventDoc.documentElement;
+                    body = eventDoc.body;
+
+                    event.pageX = event.clientX +
+                        (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+                        (doc && doc.clientLeft || body && body.clientLeft || 0);
+                    event.pageY = event.clientY +
+                        (doc && doc.scrollTop || body && body.scrollTop || 0) -
+                        (doc && doc.clientTop || body && body.clientTop || 0);
+                }
+
+                // Change position of ellipse
+                ellipse = document.getElementById('ellipse');
+                ellipse.style.left = event.pageX + "px";
+                ellipse.style.top = event.pageY + "px";
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="/about" onmouseenter="linkMouseEnter()" onmouseleave="linkMouseLeave()">
+                <span>A</span>
+                <span>b</span>
+                <span>o</span>
+                <span>u</span>
+                <span>t</span>
+            </a>
+            <a href="/work" onmouseenter="linkMouseEnter()" onmouseleave="linkMouseLeave()">
+                <span>W</span>
+                <span>o</span>
+                <span>r</span>
+                <span>k</span>
+            </a>
+            <a href="/blog" onmouseenter="linkMouseEnter()" onmouseleave="linkMouseLeave()">
+                <span>B</span>
+                <span>l</span>
+                <span>o</span>
+                <span>g</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Links ellipse overlay -->
+    <svg width="240" height="120" viewBox="-50 -20 240 120" id="ellipse">
+        <defs>
+            <filter id="displacement">
+                <feTurbulence baseFrequency="0.025" numOctaves="3" type="fractalNoise" />
+
+                <feColorMatrix in="cloudbase" type="hueRotate" values="0" result="cloud">
+                    <animate attributeName="values" from="0" to="360" dur="2.5s" repeatCount="indefinite" />
+                </feColorMatrix>
+
+
+                <feColorMatrix in="cloud" result="wispy" type="matrix" values="4 0 0 0 -1
+                                                       4 0 0 0 -1
+                                                       4 0 0 0 -1
+                                                       1 0 0 0 0   
+                                                       " />
+
+                <feFlood flood-color="#113388" result="blue" />
+
+                <feBlend mode="screen" in2="blue" in="wispy" result="blend" />
+
+                <feGaussianBlur stdDeviation="3" />
+                <feConvolveMatrix order="3" kernelMatrix="2.3 -2.3  2.3 -2.3 -1 -2.3 2.3  -2.3  2.3" />
+                <feComposite operator="in" in2="blend" />
+
+                <feDisplacementMap scale="40" yChannelSelector="B" xChannelSelector="R" in="SourceGraphic"/>
+            </filter>
+        </defs>
+        <ellipse cx="80" cy="40" rx="80" ry="40" stroke="yellow" stroke-width="3" fill="none"
+            style="filter:url(#displacement)" />
+    </svg>
+</body>
+
+</html>
