@@ -149,6 +149,27 @@ function copyMailToClipboard() {
                 html +=`</div>`
             });
 
+            // Mobile animation
+            json.forEach(link => {
+                html += `<div class="link mobile">`
+
+                if (link.link == "hi@danielcapra.com") {
+                    html += `
+                        <button onclick="copyMailToClipboard()">
+                        ${link.title}
+                        </button>
+                    `
+                } else {
+                    html += `
+                        <a href="${link.link}" target="_blank" rel="noopener">
+                        ${link.title}
+                        </a>
+                    `;
+                }
+
+                html +=`</div>`
+            });
+
             const container = document.body;
 
             const newHtml = container.innerHTML.replace(`<!--links_container-->`, `

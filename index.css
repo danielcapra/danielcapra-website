@@ -37,6 +37,7 @@ body {
     justify-content: center;
     width: 100vw;
     margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 .grid-container {
@@ -155,7 +156,8 @@ date a {
     font-family: 'Courier New';
     font-weight: bold;
     text-decoration: underline;
-    padding: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .link button,
@@ -173,11 +175,14 @@ date a {
     margin-right: 20px;
 }
 
+.link.mobile {
+    display: none;
+}
+
 @media screen and (max-width: 1024px) {
     .grid-container {
         display: flex;
         flex-direction: column;
-        /* gap: 20px; */
 
         width: 100%;
         margin-left: 20px;
@@ -191,14 +196,48 @@ date a {
     .articles-container {
         grid-column: 1;
     }
-}
-
-@media screen and (max-width: 680px) {
 
     .container {
         margin-top: 20px;
-        margin-bottom: 20px;
     }
+
+    .links-background {
+        overflow: hidden;
+        display: flex;
+    }
+
+    .links-container {
+        justify-content: flex-start;
+        min-width: 0;
+        width: max-content;
+        max-width: max-content;
+        gap: 80px;
+        white-space: nowrap;
+        animation: scroll-links 25s linear infinite;
+    }
+
+    @keyframes scroll-links {
+        from {
+            transform: translateX(0);
+        } to {
+            transform: translateX(-130ch);
+        }
+    }
+
+    .links-container .link:first-child {
+        margin-left: 40px;
+    }
+
+    .links-container .link:last-child {
+        margin-right: 0;
+    }
+
+    .link.mobile {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 680px) {
 
     .article .header,
     .project .header {
