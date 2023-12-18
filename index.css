@@ -36,7 +36,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100vw;
-    margin-top: 16vh;
+    margin-top: 100px;
 }
 
 .grid-container {
@@ -83,12 +83,20 @@ h2 {
     color: lightcoral;
 }
 
-p {
+.about-container p {
     margin-bottom: 10px;
+}
+
+.about-container p:last-child {
+    margin-bottom: 0;
 }
 
 date {
     color: lightgray;
+}
+
+date a {
+    color: inherit;
 }
 
 .projects-container {
@@ -99,25 +107,21 @@ date {
     grid-column: span 2;
 }
 
-.article {
+.article,
+.project {
     margin-bottom: 20px;
 }
 
-.article .header {
+.article:last-child,
+.project:last-child {
+    margin-bottom: 0;
+}
+
+.article .header,
+.project .header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px
-}
-
-.article .header h2 {
-    position: relative;
-}
-
-.article .header h2::after {
-    content: "↗";
-    font-family: fantasy;
-    position: absolute;
-    right: -16px;
 }
 
 .article p {
@@ -126,4 +130,87 @@ date {
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+.links-background {
+    position: sticky;
+    top: 0;
+    background-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 1000px;
+    width: 90%;
+    max-width: 1500px;
+}
+
+.link {
+    color: black;
+    cursor: pointer;
+    font-family: 'Courier New';
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 4px;
+}
+
+.link button,
+.link a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: inherit;
+}
+
+.links-container .link:first-child {
+    margin-left: 20px;
+}
+
+.links-container .link:last-child {
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        /* gap: 20px; */
+
+        width: 100%;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .projects-container {
+        grid-column: 1;
+    }
+
+    .articles-container {
+        grid-column: 1;
+    }
+}
+
+@media screen and (max-width: 680px) {
+
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .article .header,
+    .project .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 6px;
+        margin-bottom: 10px
+    }
+
+    .article p {
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+    }
 }

@@ -1,0 +1,23 @@
+[
+    {
+        "title": "CarStats",
+        "link-title": "app store link",
+        "link-link": "https://apps.apple.com/gb/app/id1665463340",
+        "link-additional-text": "",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem error nesciunt, excepturi mollitia magni deleniti eius perferendis voluptatibus vero vitae sunt laboriosam illum nisi culpa laborum minus repellat nostrum blanditiis."
+    },
+    {
+        "title": "CSList",
+        "link-title": "github link",
+        "link-link": "https://github.com/danielcapra/CSList",
+        "link-additional-text": "(open-source)",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem error nesciunt, excepturi mollitia magni deleniti eius perferendis voluptatibus vero vitae sunt laboriosam illum nisi culpa laborum minus repellat nostrum blanditiis."
+    },
+    {
+        "title": "SCColorSampler",
+        "link-title": "github link",
+        "link-link": "https://github.com/danielcapra/SCColorSampler",
+        "link-additional-text": "(open-source)",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem error nesciunt, excepturi mollitia magni deleniti eius perferendis voluptatibus vero vitae sunt laboriosam illum nisi culpa laborum minus repellat nostrum blanditiis."
+    }
+]

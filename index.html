@@ -10,13 +10,19 @@
 </head>
 
 <body>
+    <!--links_container-->
     <div class="container">
-        <div class="grid-container">
+        <div class="grid-container" id="grid">
             <div class="img-container">
-                <img src="IMG_0115.jpeg" alt="A photo of Daniel Capra surrounded by snowy hills." width="100%"
-                    style="object-fit: contain;">
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="me_portrait.jpeg"
+                        alt="A photo of Daniel Capra surrounded by snowy hills.">
+                    <source media="(max-width: 1000px)" srcset="me_landscape.jpeg"
+                        alt="A photo of Daniel Capra surrounded by snowy hills.">
+                    <img src="me_portrait.jpeg" alt="A photo of Daniel Capra surrounded by snowy hills." width="100%" style="object-fit: contain;">
+                </picture>
             </div>
-            <div class="about-container">
+            <div class="about-container" id="abt-container">
                 <h1>Who?</h1>
                 <p>
                     Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for
@@ -33,16 +39,15 @@
                     <br /><br />
                     Having freelanced as a motion designer previously, I've learned to adapt and flex my skills to fit
                     any team. Now, I'm excited to offer my expertise in the form of full-time, part-time, contract, &
-                    even freelance roles. I'm currently based in Eastern Europe, yet I'm open to relocating for the
+                    even freelance roles. I'm currently based in Eastern Europe, but I'm open to relocating for the
                     right opportunity, wherever it may be.
                     <br /><br />
                     Whenever I'm not working, you might catch me at local car meetups or immersed in the world of video
                     games.
                 </p>
             </div>
-            <div class="projects-container" id="proj-container">
-                <h1>Projects</h1>
-            </div>
+            <!--projects_container-->
+            <!--articles_container-->
         </div>
     </div>
 </body>
