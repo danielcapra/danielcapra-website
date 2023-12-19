@@ -22,7 +22,7 @@ html::before {
     opacity: 0.08;
     z-index: 1000;
     pointer-events: none;
-    background: url(noise.gif);
+    background: url(animated_noise.gif);
 }
 
 body {
