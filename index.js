@@ -149,9 +149,9 @@ function copyMailToClipboard() {
                 html +=`</div>`
             });
 
-            // Mobile animation
+            // Animation
             json.forEach(link => {
-                html += `<div class="link mobile">`
+                html += `<div class="link">`
 
                 if (link.link == "hi@danielcapra.com") {
                     html += `

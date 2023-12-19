@@ -22,7 +22,7 @@ html::before {
     opacity: 0.08;
     z-index: 1000;
     pointer-events: none;
-    background: url(noise.gif);
+    background: url(./public/noise.gif);
 }
 
 body {
@@ -140,14 +140,42 @@ date a {
     display: flex;
     justify-content: center;
     width: 100vw;
+    overflow: hidden;
 }
 
 .links-container {
     display: flex;
-    justify-content: space-between;
-    min-width: 1000px;
-    width: 90%;
-    max-width: 1500px;
+    justify-content: flex-start;
+    min-width: 0;
+    width: max-content;
+    max-width: max-content;
+    gap: 20ch;
+    white-space: nowrap;
+    animation: scroll-links-170 25s linear infinite;
+}
+
+@keyframes scroll-links-170 {
+    from {
+        transform: translateX(0);
+    } to {
+        transform: translateX(-170ch);
+    }
+}
+
+@keyframes scroll-links-130 {
+    from {
+        transform: translateX(0);
+    } to {
+        transform: translateX(-130ch);
+    }
+}
+
+.links-container .link:first-child {
+    margin-left: 14ch;
+}
+
+.links-container .link:last-child {
+    margin-right: 0;
 }
 
 .link {
@@ -165,18 +193,6 @@ date a {
     text-decoration: inherit;
     color: inherit;
     cursor: inherit;
-}
-
-.links-container .link:first-child {
-    margin-left: 20px;
-}
-
-.links-container .link:last-child {
-    margin-right: 20px;
-}
-
-.link.mobile {
-    display: none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -201,39 +217,13 @@ date a {
         margin-top: 20px;
     }
 
-    .links-background {
-        overflow: hidden;
-        display: flex;
-    }
-
     .links-container {
-        justify-content: flex-start;
-        min-width: 0;
-        width: max-content;
-        max-width: max-content;
-        gap: 80px;
-        white-space: nowrap;
-        animation: scroll-links 25s linear infinite;
-    }
-
-    @keyframes scroll-links {
-        from {
-            transform: translateX(0);
-        } to {
-            transform: translateX(-130ch);
-        }
+        gap: 10ch;
+        animation: scroll-links-130 25s linear infinite;
     }
 
     .links-container .link:first-child {
-        margin-left: 40px;
-    }
-
-    .links-container .link:last-child {
-        margin-right: 0;
-    }
-
-    .link.mobile {
-        display: block;
+        margin-left: 6ch;
     }
 }
 

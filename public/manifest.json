@@ -1,0 +1,31 @@
+{
+  "short_name": "Daniel Capra",
+  "name": "Daniel Capra",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icons/favicon_192_x_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/favicon_256_x_256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "icons/favicon_512_x_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "minimal-ui",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "orientation": "portrait"
+}
