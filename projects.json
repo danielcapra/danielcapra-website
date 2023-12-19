@@ -1,0 +1,23 @@
+[
+    {
+        "title": "CarStats",
+        "link-title": "app store link",
+        "link-link": "https://apps.apple.com/gb/app/id1665463340",
+        "link-additional-text": "",
+        "description": "An application assisting second-hand vehicle buyers by offering quick & reliable information about any vehicle registrated in the UK. With market-leading prices & user-friendly UI it quickly became an user favorite, acquiring a rating of 5 stars on the Apple App Store.<br/><br/>Built making use of the latest technologies, the Swift & SwiftUI iOS application comunicates with a Node.js back-end to handle hundreds of users monthly. It includes an -experimental- feature that allows users to supply photos, from which a combination of CoreML & Vision, as well as a custom-made algorithm will then extract the registration number."
+    },
+    {
+        "title": "CSList",
+        "link-title": "github link",
+        "link-link": "https://github.com/danielcapra/CSList",
+        "link-additional-text": "(open-source)",
+        "description": "An open-source solution to the lack of ListStyle customisability offered by SwiftUI. It allows developers to build a custom design system with a native feel. In addition, it comes with an -experimental- version that imitates List initialisers with no parameters. Available through Swift Package Manager."
+    },
+    {
+        "title": "SCColorSampler",
+        "link-title": "github link",
+        "link-link": "https://github.com/danielcapra/SCColorSampler",
+        "link-additional-text": "(open-source)",
+        "description": "Filling a void in Apple's color sampling APIs, SCColorSampler is an user-friendly solution for integrating color sampling in any macOS application. Based on the latest screen recoding API offered by Apple - ScreenCaptureKit - it offers tons of customisation to fit any developer's needs. Available through Swift Package Manager."
+    }
+]

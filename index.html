@@ -2,222 +2,107 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>danielcapra</title>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Kumar+One&display=swap');
+    <link rel="manifest" href="./public/manifest.json" />
 
-        a {
-            all: unset;
-        }
+    <meta name="mobile-web-app-capable" content="yes">
 
-        html::before {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            content: "";
-            opacity: 0.08;
-            z-index: 1000;
-            pointer-events: none;
-            background: url(noise.gif);
-        }
+    <meta name="theme-color" content="#000000" />
 
-        body {
-            background-color: black;
+    <title>Daniel Capra</title>
+    <meta name="author" content="Daniel Capra">
+    <meta name="keywords"
+        content="Daniel Capra, Capra, Daniel, danielcapra, danielcapra.com, iOS developer, macOS developer, tvOS developer, watchOS developer, visionOS developer, Swift developer, SwiftUI developer, Cocoa Touch developer, Cocoa developer, Apple developer, Web developer, Back-End developer">
+    <meta name="description"
+        content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it." />
 
-            margin: 0;
-            padding: 0;
-        }
+    <meta name="robots" content="index, nofollow">
 
-        #ellipse {
-            position: absolute;
-            left: 100px;
-            top: 100px;
-            transform: translateX(-50%) translateY(-50%);
-            visibility: hidden;
-            pointer-events: none;
-        }
+    <meta property="og:locale" content="en-US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Daniel Capra">
+    <meta property="og:url" content="https://danielcapra.com">
+    <meta property="og:site_name" content="Daniel Capra">
+    <meta property="og:description"
+        content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it.">
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100vw;
-        }
+    <meta property="twitter:locale" content="en-US">
+    <meta property="twitter:type" content="website">
+    <meta property="twitter:title" content="Daniel Capra">
+    <meta property="twitter:url" content="https://danielcapra.com">
+    <meta property="twitter:site_name" content="Daniel Capra">
+    <meta property="twitter:description"
+        content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it.">
 
-        nav {
-            display: flex;
-            width: 50%;
-            justify-content: space-evenly;
-            gap: 2em;
-        }
+    <meta name="apple-mobile-web-app-title" content="Daniel Capra">
 
-        nav a {
-            color: white;
-            cursor: pointer;
+    <!-- Favicon - Generic -->
+    <link rel="icon" sizes="32x32" href="./public/icons/favicon_32_x_32.png">
+    <link rel="icon" sizes="57x57" href="./public/icons/favicon_57_x_57.png">
+    <link rel="icon" sizes="76x76" href="./public/icons/favicon_76_x_76.png">
+    <link rel="icon" sizes="96x96" href="./public/icons/favicon_96_x_96.png">
+    <link rel="icon" sizes="128x128" href="./public/icons/favicon_128_x_128.png">
+    <link rel="icon" sizes="192x192" href="./public/icons/favicon_192_x_192.png">
+    <link rel="icon" sizes="228x228" href="./public/icons/favicon_228_x_228.png">
+    <!-- Favicon - Android -->
+    <link rel="shortcut icon" sizes="196x196" href="./public/icons/favicon_196_x_196.png">
+    <!-- Favicon - iOS -->
+    <link rel="apple-touch-icon" sizes="120x120" href="./public/icons/favicon_120_x_120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./public/icons/favicon_152_x_152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/icons/favicon_180_x_180.png" />
 
-            font-family: 'Kumar One';
-            font-size: 20px;
-
-            display: flex;
-        }
-
-        nav a span {
-            position: relative;
-            top: 0px;
-            left: 0px;
-            rotate: 0deg;
-
-            transition-duration: 2s;
-            transition-timing-function: cubic-bezier(0, .99, .02, 1);
-            transition-property: top, left, rotate;
-        }
-
-        nav a:hover {
-            color: yellow;
-        }
-
-        nav a:hover span:nth-child(1) {
-            top: -6px;
-            left: -3px;
-            rotate: 4deg;
-        }
-
-        nav a:hover span:nth-child(2) {
-            top: 4px;
-            left: 1px;
-            rotate: -6deg;
-        }
-
-        nav a:hover span:nth-child(3) {
-            top: -8px;
-            left: 2px;
-            rotate: 12deg;
-        }
-
-        nav a:hover span:nth-child(4) {
-            top: 7px;
-            left: 2px;
-            rotate: 6deg;
-        }
-
-        nav a:hover span:nth-child(5) {
-            top: -6px;
-            left: 3px;
-            rotate: 4deg;
-        }
-    </style>
-
-    <script>
-
-        function linkMouseEnter() {
-            moveEllipseAtMousePosition();
-            const ellipse = document.getElementById("ellipse");
-            ellipse.style.visibility = "visible";
-        }
-
-        function linkMouseLeave() {
-            const ellipse = document.getElementById("ellipse");
-            ellipse.style.visibility = "hidden";
-            // reset document onmousemove handler
-            document.onmousemove = null;
-        }
-
-        function moveEllipseAtMousePosition() {
-            "use strict";
-
-            document.onmousemove = handleMouseMove;
-            function handleMouseMove(event) {
-                var ellipse, eventDoc, doc, body, pageX, pageY;
-
-                event = event || window.event; // IE-ism
-
-                // If pageX/Y aren't available and clientX/Y
-                // are, calculate pageX/Y - logic taken from jQuery
-                // Calculate pageX/Y if missing and clientX/Y available
-                if (event.pageX == null && event.clientX != null) {
-                    eventDoc = (event.target && event.target.ownerDocument) || document;
-                    doc = eventDoc.documentElement;
-                    body = eventDoc.body;
-
-                    event.pageX = event.clientX +
-                        (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-                        (doc && doc.clientLeft || body && body.clientLeft || 0);
-                    event.pageY = event.clientY +
-                        (doc && doc.scrollTop || body && body.scrollTop || 0) -
-                        (doc && doc.clientTop || body && body.clientTop || 0);
-                }
-
-                // Change position of ellipse
-                ellipse = document.getElementById('ellipse');
-                ellipse.style.left = event.pageX + "px";
-                ellipse.style.top = event.pageY + "px";
-            }
-        };
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Local dependencies -->
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
 </head>
 
 <body>
+    <!--links_container-->
     <div class="container">
-        <nav>
-            <a href="/about" onmouseenter="linkMouseEnter()" onmouseleave="linkMouseLeave()">
-                <span>A</span>
-                <span>b</span>
-                <span>o</span>
-                <span>u</span>
-                <span>t</span>
-            </a>
-            <a href="/work" onmouseenter="linkMouseEnter()" onmouseleave="linkMouseLeave()">
-                <span>W</span>
-                <span>o</span>
-                <span>r</span>
-                <span>k</span>
-            </a>
-            <a href="/blog" onmouseenter="linkMouseEnter()" onmouseleave="linkMouseLeave()">
-                <span>B</span>
-                <span>l</span>
-                <span>o</span>
-                <span>g</span>
-            </a>
-        </nav>
+        <div class="grid-container" id="grid">
+            <div class="img-container">
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="./public/me_portrait.jpeg"
+                        alt="A photo of Daniel Capra surrounded by snowy hills.">
+                    <source media="(max-width: 1024px)" srcset="./public/me_landscape.jpeg"
+                        alt="A photo of Daniel Capra surrounded by snowy hills.">
+                    <img src="./me_portrait.jpeg" alt="A photo of Daniel Capra surrounded by snowy hills." width="100%"
+                        style="object-fit: contain;">
+                </picture>
+            </div>
+            <div class="about-container" id="abt-container">
+                <h1>Who?</h1>
+                <p>
+                    Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for
+                    Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end
+                    development when the project demands it.
+                </p>
+                <h1>Availability</h1>
+                <p>
+                    I'm always down to make new connections and discuss about potential work, hit me up at
+                    <button onclick="copyMailToClipboard()">
+                        hi@danielcapra.com
+                    </button>
+                    & let's chat!
+                    <br /><br />
+                    Having freelanced as a motion designer previously, I've learned to adapt and flex my skills to fit
+                    any team. Now, I'm excited to offer my expertise in the form of full-time, part-time, contract, &
+                    even freelance roles. I'm currently based in Eastern Europe, but I'm open to relocating for the
+                    right opportunity, wherever it may be.
+                    <br /><br />
+                    Whenever I'm not working, you might catch me at local car meetups or immersed in the world of video
+                    games.
+                </p>
+            </div>
+            <!--projects_container-->
+            <!--articles_container-->
+        </div>
     </div>
-
-    <!-- Links ellipse overlay -->
-    <svg width="240" height="120" viewBox="-50 -20 240 120" id="ellipse">
-        <defs>
-            <filter id="displacement">
-                <feTurbulence baseFrequency="0.025" numOctaves="3" type="fractalNoise" />
-
-                <feColorMatrix in="cloudbase" type="hueRotate" values="0" result="cloud">
-                    <animate attributeName="values" from="0" to="360" dur="2.5s" repeatCount="indefinite" />
-                </feColorMatrix>
-
-
-                <feColorMatrix in="cloud" result="wispy" type="matrix" values="4 0 0 0 -1
-                                                       4 0 0 0 -1
-                                                       4 0 0 0 -1
-                                                       1 0 0 0 0   
-                                                       " />
-
-                <feFlood flood-color="#113388" result="blue" />
-
-                <feBlend mode="screen" in2="blue" in="wispy" result="blend" />
-
-                <feGaussianBlur stdDeviation="3" />
-                <feConvolveMatrix order="3" kernelMatrix="2.3 -2.3  2.3 -2.3 -1 -2.3 2.3  -2.3  2.3" />
-                <feComposite operator="in" in2="blend" />
-
-                <feDisplacementMap scale="40" yChannelSelector="B" xChannelSelector="R" in="SourceGraphic"/>
-            </filter>
-        </defs>
-        <ellipse cx="80" cy="40" rx="80" ry="40" stroke="yellow" stroke-width="3" fill="none"
-            style="filter:url(#displacement)" />
-    </svg>
 </body>
 
 </html>
