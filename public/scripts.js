@@ -82,7 +82,7 @@ function copyMailToClipboard() {
 
 (function () {
     // Populate projects
-    fetch('./projects.json')
+    fetch('projects.json')
         .then((response) => response.json())
         .then((json) => {
             if (json.length < 1) { return }
@@ -123,7 +123,7 @@ function copyMailToClipboard() {
 
 (function () {
     // Populate links
-    fetch('./links.json')
+    fetch('links.json')
         .then((response) => response.json())
         .then((json) => {
             if (json.length < 1) { return }
