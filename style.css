@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Kumar+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Kumar+One&display=swap");
 
 * {
     color: white;
@@ -71,14 +71,14 @@ body {
 }
 
 h1 {
-    font-family: 'Kumar One';
+    font-family: "Kumar One";
     font-size: 32px;
 }
 
 h2,
 p,
 date {
-    font-family: 'Courier New';
+    font-family: "Courier New";
     font-size: 16px;
 }
 
@@ -124,7 +124,7 @@ date a {
 .project .header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .article p {
@@ -159,7 +159,8 @@ date a {
 @keyframes scroll-links-170 {
     from {
         transform: translateX(0);
-    } to {
+    }
+    to {
         transform: translateX(-170ch);
     }
 }
@@ -167,7 +168,8 @@ date a {
 @keyframes scroll-links-130 {
     from {
         transform: translateX(0);
-    } to {
+    }
+    to {
         transform: translateX(-130ch);
     }
 }
@@ -183,7 +185,7 @@ date a {
 .link {
     color: black;
     cursor: pointer;
-    font-family: 'Courier New';
+    font-family: "Courier New";
     font-weight: bold;
     text-decoration: underline;
     padding-top: 4px;
@@ -230,14 +232,13 @@ date a {
 }
 
 @media screen and (max-width: 680px) {
-
     .article .header,
     .project .header {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: 6px;
-        margin-bottom: 10px
+        margin-bottom: 10px;
     }
 
     .article p {
