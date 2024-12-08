@@ -1,108 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+        <link rel="manifest" href="/manifest.json" />
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes" />
 
-    <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
 
-    <meta name="mobile-web-app-capable" content="yes">
+        <title>Daniel Capra</title>
+        <meta name="author" content="Daniel Capra" />
+        <meta
+            name="keywords"
+            content="Daniel Capra, Capra, Daniel, danielcapra, danielcapra.com, iOS developer, macOS developer, tvOS developer, watchOS developer, visionOS developer, Swift developer, SwiftUI developer, Cocoa Touch developer, Cocoa developer, Apple developer, Web developer, Back-End developer"
+        />
+        <meta
+            name="description"
+            content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it."
+        />
 
-    <meta name="theme-color" content="#000000" />
+        <meta name="robots" content="index, nofollow" />
 
-    <title>Daniel Capra</title>
-    <meta name="author" content="Daniel Capra">
-    <meta name="keywords"
-        content="Daniel Capra, Capra, Daniel, danielcapra, danielcapra.com, iOS developer, macOS developer, tvOS developer, watchOS developer, visionOS developer, Swift developer, SwiftUI developer, Cocoa Touch developer, Cocoa developer, Apple developer, Web developer, Back-End developer">
-    <meta name="description"
-        content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it." />
+        <meta property="og:locale" content="en-US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Daniel Capra" />
+        <meta property="og:url" content="https://danielcapra.com" />
+        <meta property="og:site_name" content="Daniel Capra" />
+        <meta
+            property="og:description"
+            content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it."
+        />
 
-    <meta name="robots" content="index, nofollow">
+        <meta property="twitter:locale" content="en-US" />
+        <meta property="twitter:type" content="website" />
+        <meta property="twitter:title" content="Daniel Capra" />
+        <meta property="twitter:url" content="https://danielcapra.com" />
+        <meta property="twitter:site_name" content="Daniel Capra" />
+        <meta
+            property="twitter:description"
+            content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it."
+        />
 
-    <meta property="og:locale" content="en-US">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Daniel Capra">
-    <meta property="og:url" content="https://danielcapra.com">
-    <meta property="og:site_name" content="Daniel Capra">
-    <meta property="og:description"
-        content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it.">
+        <meta name="apple-mobile-web-app-title" content="Daniel Capra" />
 
-    <meta property="twitter:locale" content="en-US">
-    <meta property="twitter:type" content="website">
-    <meta property="twitter:title" content="Daniel Capra">
-    <meta property="twitter:url" content="https://danielcapra.com">
-    <meta property="twitter:site_name" content="Daniel Capra">
-    <meta property="twitter:description"
-        content="Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end development when the project demands it.">
+        <!-- Favicon - Generic -->
+        <link rel="icon" sizes="32x32" href="/icons/favicon_32_x_32.png" />
+        <link rel="icon" sizes="57x57" href="/icons/favicon_57_x_57.png" />
+        <link rel="icon" sizes="76x76" href="/icons/favicon_76_x_76.png" />
+        <link rel="icon" sizes="96x96" href="/icons/favicon_96_x_96.png" />
+        <link rel="icon" sizes="128x128" href="/icons/favicon_128_x_128.png" />
+        <link rel="icon" sizes="192x192" href="/icons/favicon_192_x_192.png" />
+        <link rel="icon" sizes="228x228" href="/icons/favicon_228_x_228.png" />
+        <!-- Favicon - Android -->
+        <link
+            rel="shortcut icon"
+            sizes="196x196"
+            href="/icons/favicon_196_x_196.png"
+        />
+        <!-- Favicon - iOS -->
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="/icons/favicon_120_x_120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/icons/favicon_152_x_152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/icons/favicon_180_x_180.png"
+        />
 
-    <meta name="apple-mobile-web-app-title" content="Daniel Capra">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Local dependencies -->
+        <link rel="stylesheet" href="/style.css" type="text/css" />
+    </head>
 
-    <!-- Favicon - Generic -->
-    <link rel="icon" sizes="32x32" href="/icons/favicon_32_x_32.png">
-    <link rel="icon" sizes="57x57" href="/icons/favicon_57_x_57.png">
-    <link rel="icon" sizes="76x76" href="/icons/favicon_76_x_76.png">
-    <link rel="icon" sizes="96x96" href="/icons/favicon_96_x_96.png">
-    <link rel="icon" sizes="128x128" href="/icons/favicon_128_x_128.png">
-    <link rel="icon" sizes="192x192" href="/icons/favicon_192_x_192.png">
-    <link rel="icon" sizes="228x228" href="/icons/favicon_228_x_228.png">
-    <!-- Favicon - Android -->
-    <link rel="shortcut icon" sizes="196x196" href="/icons/favicon_196_x_196.png">
-    <!-- Favicon - iOS -->
-    <link rel="apple-touch-icon" sizes="120x120" href="/icons/favicon_120_x_120.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/icons/favicon_152_x_152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/favicon_180_x_180.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Local dependencies -->
-    <link rel="stylesheet" href="/style.css" type="text/css">
-    <script src="/main.js" defer type="text/javascript"></script>
-</head>
-
-<body>
-    <!--links_container-->
-    <div class="container">
-        <div class="grid-container" id="grid">
-            <div class="img-container">
-                <picture>
-                    <source media="(min-width: 1024px)" srcset="photo_portrait.jpeg"
-                        alt="A photo of Daniel Capra surrounded by snowy hills.">
-                    <source media="(max-width: 1024px)" srcset="photo_landscape.jpeg"
-                        alt="A photo of Daniel Capra surrounded by snowy hills.">
-                    <img src="photo_portrait.jpeg" alt="A photo of Daniel Capra surrounded by snowy hills." width="100%"
-                        style="object-fit: contain;">
-                </picture>
+    <body>
+        <!--links_container-->
+        <div class="container">
+            <div class="links-container">
+                <div>
+                    <a
+                        href="https://github.com/danielcapra"
+                        target="_blank"
+                        class="corner-page-link"
+                        >github/danielcapra</a
+                    >
+                    <a
+                        class="corner-page-link"
+                        href="https://linkedin.com/in/danielcapra"
+                        target="_blank"
+                        >linkedin/danielcapra</a
+                    >
+                </div>
+                <div>
+                    <a
+                        class="corner-page-link"
+                        href="https://medium.com/@danielcapra"
+                        target="_blank"
+                        >medium/danielcapra</a
+                    >
+                </div>
             </div>
-            <div class="about-container" id="abt-container">
-                <h1>Who?</h1>
-                <p>
-                    Hi, I'm Daniel, also known as 'shipty' online. I'm a dedicated software engineer with a passion for
-                    Swift & SwiftUI, specializing in Apple platforms, particularly iOS. I also dabble in web & back-end
-                    development when the project demands it.
+            <div class="greetings-container">
+                <ul class="greetings-list">
+                    <li>
+                        <h1 class="greeting">
+                            Hello
+                            <span class="greeting-lang">
+                                eng / <span class="coral">flnt.</span></span
+                            >
+                        </h1>
+                    </li>
+                    <li>
+                        <h1 class="greeting">
+                            Bonjour
+                            <span class="greeting-lang"> fre / B1</span>
+                        </h1>
+                    </li>
+                    <li>
+                        <h1 class="greeting">
+                            안녕하세요
+                            <span class="greeting-lang"> kor / A2</span>
+                        </h1>
+                    </li>
+                    <li>
+                        <h1 class="greeting">
+                            Salutare
+                            <span class="greeting-lang">
+                                rom / <span class="coral">flnt.</span></span
+                            >
+                        </h1>
+                    </li>
+                    <li>
+                        <h1 class="greeting">
+                            Hello
+                            <span class="greeting-lang">
+                                eng / <span class="coral">flnt.</span></span
+                            >
+                        </h1>
+                    </li>
+                    <li>
+                        <h1 class="greeting">
+                            Bonjour
+                            <span class="greeting-lang"> fre / B1</span>
+                        </h1>
+                    </li>
+                </ul>
+                <h2 class="big-message">
+                    This website is being re-done*. You can reach me at
+                    <span class="email">hi@danielcapra.com</span> if you want to
+                    talk work or even just invite me to play some Valorant.
+                    Talking about work while playing Valorant works too.
+                </h2>
+                <p class="small-message">
+                    *That means I will proceed to NOT work on it for the
+                    following 6 to 10 months and then pump it out in a random
+                    weekend.
                 </p>
-                <h1>Availability</h1>
-                <p>
-                    I'm always down to make new connections and discuss about potential work, hit me up at
-                    <button onclick="copyMailToClipboard()">
-                        hi@danielcapra.com
-                    </button>
-                    & let's chat!
-                    <br /><br />
-                    Having freelanced as a motion designer previously, I've learned to adapt and flex my skills to fit
-                    any team. Now, I'm excited to offer my expertise in the form of full-time, part-time, contract, &
-                    even freelance roles. I'm currently based in Eastern Europe, but I'm open to relocating for the
-                    right opportunity, wherever it may be.
-                    <br /><br />
-                    Whenever I'm not working, you might catch me at local car meetups or immersed in the world of video
-                    games.
+                <p class="small-message">
+                    You're welcome to take a glance at the links scattered in
+                    the corners of the page to see what I'm up to but do keep in
+                    mind I am literally like the worst at keeping them updated
+                    lol. Most up to date info can be obtained directly from the
+                    source – so just say hi haha.
                 </p>
             </div>
-            <!--projects_container-->
-            <!--articles_container-->
         </div>
-    </div>
-</body>
-
+    </body>
 </html>
